@@ -33,3 +33,14 @@ Diff algorithm - finds out the diff b/w updated virtual dom and prev virtual dom
 # 2 types Routing in web apps
 Client side Routing - we are not fetching the new page, just component gets loaded/changed
 Server side Routing - N/w call -> fetches the html data -> and renders
+
+Styled components are used to style.
+Diff frameworks used are:
+Material UI
+ant Design
+bootstrap
+chakra UI
+tailwind css
+
+<!-- to modify tailwind  or hardcode -->
+w-[200px]

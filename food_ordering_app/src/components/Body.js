@@ -45,24 +45,26 @@ const Body = () => {
     // conditional rendering
     return listOfRestaurants?.length === 0 ? (<Shimmer />) : (
         <div className='body'>
-            <div className='filter'>
-                <div className="search">
+            <div className='filter flex'>
+                <div className="search m-4 p-4">
                     {/* whenever we are typing and input is tied to state variable then react re renders the component 
                     and updates only the input value since there is only change in input (using diff b/w the two virtual dom is compared) */}
-                    <input type="text" className="search-box" value={searchText} onChange={(e) => {setSearchText(e.target.value);}}/>
-                    <button onClick={() => {
+                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e) => {setSearchText(e.target.value);}}/>
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                         console.log(searchText);
                         setFilteredRestaurant(listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())));
                     }}>Search</button>
                 </div>
-                <button className="filter-btn" onClick={() => {
-                    const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
-                    setListOfRestaurants(filteredList);
-                }}>
-                    Top Rated Restaurant
-                </button>
+                <div className="search m-4 p-4">
+                    <button className="px-4 py-2 bg-gray-100 m-4 rounded-lg" onClick={() => {
+                        const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
+                        setListOfRestaurants(filteredList);
+                    }}>
+                        Top Rated Restaurant
+                    </button>
+                </div>
             </div>
-            <div className='res-container'>
+            <div className='flex flex-wrap'>
               {filteredRestaurant && filteredRestaurant.map((restaurant) => (
                 <Link 
                     key={restaurant?.info?.id}
