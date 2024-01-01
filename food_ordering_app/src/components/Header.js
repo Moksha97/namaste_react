@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 const Header = () => {
     // whenever state variable changes react will rerender the current whole header omponent 
     // but only the button changes(because of reconcilliation algo)
@@ -13,6 +15,7 @@ const Header = () => {
         console.log("hi");
     },[]);
     const isOnline = useOnlineStatus();
+    const {loggedInUser} = useContext(UserContext);
     return (
         <div className='flex justify-between bg-yellow-200 shadow-lg mb-2 sm:bg-pink-200 lg:bg-green-200'>
             <div className='logo-container' style={{margin: "10px"}}>
@@ -38,6 +41,7 @@ const Header = () => {
                         if(btnName === "Login") setBtnName("Logout");
                         else setBtnName("Login");
                         }}>{btnName}</button>
+                    <li className="px-4 font-bold">{loggedInUser}</li>
                 </ul>
             </div>
         </div>

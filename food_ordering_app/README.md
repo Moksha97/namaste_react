@@ -44,3 +44,11 @@ tailwind css
 
 <!-- to modify tailwind  or hardcode -->
 w-[200px]
+
+Higher order component
+
+->function that takes a component and returns a component
+
+Controlled and Uncontrolled components
+-> when we give the power of the component to show or hide to the parent component then the child becomes controlled component.
+
