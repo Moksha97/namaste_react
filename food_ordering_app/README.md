@@ -52,3 +52,20 @@ Higher order component
 Controlled and Uncontrolled components
 -> when we give the power of the component to show or hide to the parent component then the child becomes controlled component.
 
+
+# REDUX Toolkit
+Redux & React are two different libraries.
+Zustand is also another library that is used for state management.
+
+- Install reduxjs toolkit, react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector 
+
+
+- when subscribing make sure we subscribe to the right portion of the state. (optimization)
+ Otherwise if we subscribe to the whole store then if anything changes in store then the component where we subscribed will also affect. So choosing the required portion is important.
+
+ - Redux toolkit uses immer to work with immutable states.
